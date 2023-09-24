@@ -121,11 +121,11 @@ echo "$localip $(hostname)" >> /etc/hosts
 fi
 mkdir -p /etc/xray
 
-echo -e "${tyblue} Welcome To Script ILHAM STORE${NC} "
+echo -e "${tyblue} Welcome To Script Premium YSSHstore${NC} "
 sleep 2
-echo -e "[ ${green}INFO${NC} ] Preparing the install file"
+echo -e "[ ${green}INFO${NC} ] Mempersiapkan Instal File"
 apt install git curl -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] installation file is ready"
+echo -e "[ ${green}INFO${NC} ] Instal Script Sudah Siap"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check your permission : "
 
