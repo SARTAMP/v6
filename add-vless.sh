@@ -170,10 +170,6 @@ echo -e "Link Grpc => ${vlesslink3}"
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                
 echo -e "Expired => $exp"
 echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE                   │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat   
 echo -e ""             
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
