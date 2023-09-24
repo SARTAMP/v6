@@ -162,7 +162,7 @@ ISPVPS=$( curl -s ipinfo.io/org )
 
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │                  AUTOSCRIPT PREMIUM              │" | lolcat
+echo -e " │                  AUTOSCRIPT PREMIUM                │" | lolcat
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │  ${BIGreen}Premium Version   :  ${BIGreen}Multiport XRAY${NC}" 
@@ -199,7 +199,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "     ┌─────────────────────────────────────┐" | lolcat
-echo -e "          │  Version       : $(cat /opt/.ver) Last Version " | lolcat
+echo -e "     │  Version       : $(cat /opt/.ver) Last Version " | lolcat
 echo -e "     │  User          : $Name " | lolcat
 if [ $exp \< 1000 ];
 then
