@@ -396,10 +396,6 @@ echo -e "Link GRPC : "
 echo -e "${shadowsockslink1}"  
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE               │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo ""  
 read -n 1 -s -r -p "Press any key to back on menu"
 
 menu
