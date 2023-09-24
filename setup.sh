@@ -138,8 +138,8 @@ green "Permission Accepted!"
 else
 red "Permission Denied!
 Please Buy AutoScript Premium
-WA: 081391215759
-Telegram: t.me/CRSe7en2nd"
+WA: 081215360549
+Telegram: t.me/YSSHstore"
 rm setup.sh > /dev/null 2>&1
 sleep 10
 exit 0
@@ -595,7 +595,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo  " "
-echo "=====================-[ ILHAM STORE TUNNEL ]-===================="
+echo "=====================-[ PREMIUM VVIP ]-===================="
 echo  ""
 echo  "------------------------------------------------------------"
 echo  ""
@@ -634,7 +634,7 @@ echo ""
 echo  ""
 echo  "------------------------------------------------------------"
 echo  ""
-echo  "================-[ SCRIPT XRAY ILHAM STORE ]-================"
+echo  "================-[ SCRIPT PREMIUM VVIP ]-================"
 echo -e ""
 echo  ""
 echo  "" | tee -a log-install.txt
@@ -680,7 +680,7 @@ Domain: $(cat /etc/xray/domain)
 Waktu Install: $date
 Client Name: $Name
 ==================================
-[ORDER](buttonurl:https://t.me/CRSe7en2nd)
+
 "
 clear
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
@@ -695,7 +695,7 @@ Domain        : $(cat /etc/xray/domain)
 Date & Time   : $date
 Client Name   : $Name
 ==================================
-[ORDER](buttonurl:https://t.me/CRSe7en2nd)
+
 "
 history -c
 
