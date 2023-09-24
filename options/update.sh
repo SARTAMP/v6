@@ -20,7 +20,7 @@ IPurple='\033[0;95m'      # Purple
 ICyan='\033[0;96m'        # Cyan
 IWhite='\033[0;97m'       # White
 NC='\e[0m'
-GitUser="effatastore"
+GitUser="SARTAMP"
 if [ "${EUID}" -ne 0 ]; then
                 echo "You need to run this script as root"
                 exit 1
@@ -64,11 +64,6 @@ echo -e "    [1] CHECK UPDATE NOW${NC}"
 echo -e "    [x] BACK TO MENU${NC}"
 echo -e ""
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e ""
-echo -e " ┌─────────────────────────────────────────────────┐" | lolcat
-echo -e " │              ILHAM STORE                 │" | lolcat
-echo -e " └─────────────────────────────────────────────────┘" | lolcat
-echo -e ""
 echo -e ""
 read -p "      PLEASE CHOOSE 1 or x : " option2
 case $option2 in
@@ -235,10 +230,6 @@ clear
 echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│              ILHAM STORE                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
