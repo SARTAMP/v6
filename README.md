@@ -1,19 +1,7 @@
-# kucing
-Project autoscript ILHAM STORE
-# SEBELUM INSTALL
+# TAHAP 1
 <pre><code>apt update && apt -y upgrade</code></pre>
-# INSTALL XRAY V2
-<pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/IlhamStore23/kucing/main/setup.sh && chmod +x setup.sh && ./setup.sh</code></pre>
-## HARGA AUTOSCRIPT
-### _1 Bulan 10k_
-### _Lifetime tanpa change ip 30K_
-### _Lifetime 2x ganti ip 50K_
-### _Source script_ ~~600k~~ 450k✅
-### FULL TUTOR 1JT
-
-## Silahkan Hubungi
-### https://t.me/IlhamStore23
-### https://wa.me/687824016438
+# TAHAP 2
+<pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/setup.sh && chmod +x setup.sh && ./setup.sh</code></pre>
 
 ## ⏩ AUTOSCRIPT WEBSOCKET MULTIPORT 443 DETAILS ⏪
 ### Support Vmess Multipath <br> 
