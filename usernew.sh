@@ -168,11 +168,6 @@ echo -e ""
 echo -e "─────────────────────────────────────────────────" | lolcat              
 echo -e "      Expired => $exp"
 echo -e "─────────────────────────────────────────────────" | lolcat
-echo -e ""  
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               EFFATA ID STORE                │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-            
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 funny
