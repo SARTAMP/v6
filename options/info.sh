@@ -1,5 +1,4 @@
 #!/bin/bash
-#Script By CRSe7en2nd
 
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
@@ -136,10 +135,10 @@ echo -e "\033[1;91m  DATE&TIME     : $( date -d "0 days" +"%d-%m-%Y | %X" )\e[0m
 echo -e "┌──────────────────────────────────────────┐" | lolcat
 echo -e "│           AUTOSCRIPT INFORMATION         │" | lolcat       
 echo -e "└──────────────────────────────────────────┘" | lolcat
-echo -e "\033[1;96m  Owner        : ILHAM STORE \e[0m"
-echo -e "\033[1;96m  Contact WA   : 087824016438 \e[0m"
-echo -e "\033[1;96m  Telegram     : t.me/IlhamStore23 \e[0m"
-echo -e "\033[1;96m  Official     : https://t.me/+nfZrG5VW56JlNGE1 \e[0m"
+echo -e "\033[1;96m  Owner        : YOGZ VPN STORE \e[0m"
+echo -e "\033[1;96m  Contact WA   : 081215360549 \e[0m"
+echo -e "\033[1;96m  Telegram     : t.me/YSSHstore \e[0m"
+#echo -e "\033[1;96m  Official     : https://t.me/+nfZrG5VW56JlNGE1 \e[0m"
 echo -e "\033[1;96m  Type Script  : Multiport V3 \e[0m"
 echo -e "\033[1;96m  Version SC   : $(cat /opt/.ver) \e[0m"
 echo -e "\033[1;96m  Client Name  : $Name \e[0m"
@@ -169,10 +168,7 @@ echo -e "\033[1;93m  >Port Trojan WS           :443\e[0m"
 echo -e "\033[1;93m  >Port Trojan GRPC         :443\e[0m"
 echo -e "\033[1;93m  >Port ShadowSocks WS      :443\e[0m"
 echo -e "\033[1;93m  >Port ShadowSocks GRPC    :443\e[0m"
-echo -e ""
-echo -e "\033[1;97mOrder AutoScript Lifetime wa.me/6281391215759\e[0m"
-echo -e ""
-echo -e ""
+echo -e "└──────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 esac
