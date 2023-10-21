@@ -158,7 +158,7 @@ clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo "                 Back to menu to 5 sec" | lolcat
+echo "Back to menu to 5 sec" | lolcat
 sleep 5
 menu
 ;;
