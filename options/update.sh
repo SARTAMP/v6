@@ -159,3 +159,9 @@ echo -e "└──────────────────────�
 echo "                 Back to menu to 5 sec" | lolcat
 sleep 5
 menu
+;;
+x)
+clear
+menu
+
+esac
