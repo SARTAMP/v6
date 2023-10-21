@@ -110,17 +110,17 @@ read -p "Max IP         : " iplimit
 read -p "Expired (Days) : " masaaktif
 
 IP=$(curl -sS ifconfig.me);
-ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
-opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
-db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
-ssl="$(cat /root/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
-sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+#ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
+#opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
+#db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
+#ssl="$(cat /root/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
+#sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
+#ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+#ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 
-OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
-OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
-OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
+#OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
+#OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
+#OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
 sleep 1
 #limitip
@@ -133,41 +133,39 @@ clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                   SSH ACCOUNT                   │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat                
-echo -e ""
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
+echo -e " SSH ACCOUNT   " | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat                
 echo -e "Username     : $Login"
-echo -e "Password     : $Pass"        
+echo -e "Password     : $Pass"    
 echo -e "CITY         : $(cat /root/.mycity)"
 echo -e "ISP          : $(cat /root/.myisp)"
 echo -e "Host/IP      : $(cat /etc/xray/domain)"
-echo -e "NSDOMAIN     : $(cat /etc/xray/dns)"
-echo -e "PUBKEY       : $(cat /etc/slowdns/server.pub)"
-echo -e "Slowdns      : 53, 5300"
+#echo -e "NSDOMAIN     : $(cat /etc/xray/dns)"
+#echo -e "PUBKEY       : $(cat /etc/slowdns/server.pub)"
+#echo -e "Slowdns      : 53, 5300"
 echo -e "Udp Custom   : 1-65535"
 echo -e "Port ssl/tls : 443, 441, 445, 777"
 echo -e "Port non tls : 8880, 109, 143, 80"   
-echo -e "OpenSSH      : $opensh"
-echo -e "Dropbear     : $db" 
-echo -e "SSH-WS       : $portsshws" 
-echo -e "SSH WS SSL   : $wsssl" 
-echo -e "SSL/TLS      : $ssl"         
+echo -e "OpenSSH      : 22"
+echo -e "Dropbear     : 109, 143" 
+echo -e "SSH-WS       : 80" 
+echo -e "SSH WS SSL   : 443" 
+echo -e "SSL/TLS      : 443, 777"         
 echo -e "OVPN TCP     : http://$domain:89/tcp.ovpn"
 echo -e "OVPN UDP     : http://$domain:89/udp.ovpn"
 echo -e "BadVpn       : 7300"      
-echo -e ""  
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
 echo -e "Payload WS"
 echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
 echo -e "Payload WSS"
 echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
 echo -e ""  
-echo -e "─────────────────────────────────────────────────" | lolcat              
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat              
 echo -e "      Expired => $exp"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-funny
+menu
