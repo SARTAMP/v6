@@ -156,27 +156,21 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
+# CERTIFICATE STATUS
+d1=$(date -d "$valid" +%s)
+d2=$(date -d "$today" +%s)
+certifacate=$(((d1 - d2) / 86400))
+# VPS Information
+DATE=$(date +'%Y-%m-%d')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+}
+mai="datediff "$Exp" "$DATE""
 
-#Warna Teks underline
-ug="\033[4;32m" # HIJAU
-ur="\033[4;31m" # MERAH
-uy="\033[4;33m" # KUNING
-uw="\033[4;37m" # PUTIH
-uu="\033[4;35m" # UNGU
-uc="\033[4;36m" # CYANN
-ub="\033[4;30m" # BLACK
-#Warna Text 
-c="\e[1;36m" # CYANN
-y="\e[1;33m" # KUNING
-g="\e[1;32m" # HIJAU
-w="\e[1;37m" # PUTIH
-u="\e[1;35m" # UNGU
-r="\e[1;31m" # MERAH
-NC="\e[0m"
-# background
-GB="\033[42;37m" # HIJAU BACKGROUND
-RB="\033[41;37m" # MERAH BACKGROUND
-
+y='\033[1;33m' #yellow
+g="\033[1;92m"
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
 #######################
@@ -191,31 +185,29 @@ ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
 let ssa=$ssx/2
 ########################
 clear
-echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │${RB}                  AUTOSCRIPT MULTIPORT             │${NC}"
-echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Xray${NC}" 
+echo -e " ${y}        ┌───────────────────────────────┐$NC"
+echo -e " ${y}        │${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
+echo -e " ${y}        └───────────────────────────────┘$NC"
+echo -e "${y} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${y} │${NC}   ${g}User Core         :  ${BIGreen}Xray${NC}" 
 if [ "$cekup" = "day" ]; then
-echo -e " ${BICyan}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes $uptimecek${NC}"
+echo -e " ${y}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes $uptimecek${NC}"
 else
-echo -e " ${BICyan}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes ${NC}"
+echo -e " ${y}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes ${NC}"
 fi
-echo -e " ${BICyan}│  ${BIGreen}OS VPS            :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
-echo -e " ${BICyan}│  ${BIGreen}Memory Usage      :  ${BIGreen}$uram MB/ $tram MB${NC}"
-echo -e " ${BICyan}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
-echo -e " ${BICyan}│  ${BIGreen}Current Domain    :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
-echo -e " ${BICyan}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
-echo -e " ${BICyan}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
-echo -e " ${BICyan}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
-echo -e " ${BICyan}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${y}│  ${BIGreen}OS VPS            :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
+echo -e " ${y}│  ${BIGreen}Memory Usage      :  ${BIGreen}$uram MB/ $tram MB${NC}"
+echo -e " ${y}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
+echo -e " ${y}│  ${BIGreen}Current Domain    :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
+echo -e " ${y}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
+echo -e " ${y}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
+echo -e " ${y}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
+echo -e " ${y}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
+echo -e " ${y}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e " │    ${BIBlue} SSH       VMESS        VLESS       TROJAN"
 echo -e " │    ${BIBlue}  $ssh1          $vma            $vla            $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   "
-echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             "
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
@@ -223,23 +215,11 @@ echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} MENU VLESS${NC}         
 echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
 echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-DATE=$(date +'%d %B %Y')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
-}
-mai="datediff "$Exp" "$DATE""
 echo -e "        ┌─────────────────────────────────────┐" 
 echo -e "        │  User          : $Name " 
-if [ $exp \< 1000 ];
-then
-echo -e "       $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
-else
-    datediff "$Exp" "$DATE"
-fi;
+echo -e "        |  Exp.sc        : $certifacate"
 echo -e "        └─────────────────────────────────────┘"
-echo -e "      ${w}             Version : 1.4.0 ${NC}"
+echo -e "                       Version : 1.4.0 ${NC}" | lolcat
 echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
