@@ -179,7 +179,17 @@ RB="\033[41;37m" # MERAH BACKGROUND
 
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
-
+#######################
+vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
+let vla=$vlx/2
+vmc=$(grep -c -E "^### " "/etc/xray/config.json")
+let vma=$vmc/2
+ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+trx=$(grep -c -E "^#! " "/etc/xray/config.json")
+let trb=$trx/2
+ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
+let ssa=$ssx/2
+########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e " │                  AUTOSCRIPT PREMIUM                │" | lolcat
@@ -201,9 +211,11 @@ echo -e " ${BICyan}│  ${BIGreen}REGION            :  ${BIGreen}$(curl -s ipinf
 echo -e " ${BICyan}│  ${BIGreen}DATE&TIME         :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │    ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
-echo -e " │    ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             │"
+echo -e " │    ${BIBlue} SSH           VMESS          VLESS       TROJAN"
+echo -e " │    ${BIBlue}  $ssh1          $vma            $vla          $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
+echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
+echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             │"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
@@ -227,8 +239,8 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "     └─────────────────────────────────────┘" | lolcat
-echo -e "          ${w}             Version : 4.0.9 ${NC}"
-echo -e "                       ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
+echo -e "    ${w}             Version : 4.0.9 ${NC}"
+echo -e "               ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
