@@ -153,9 +153,6 @@ chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 clear
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/version )
-clear
-echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
