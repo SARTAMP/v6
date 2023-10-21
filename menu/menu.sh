@@ -156,18 +156,6 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
-# CERTIFICATE STATUS
-d1=$(date -d "$valid" +%s)
-d2=$(date -d "$today" +%s)
-certifacate=$(((d1 - d2) / 86400))
-# VPS Information
-DATE=$(date +'%Y-%m-%d')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
-}
-mai="datediff "$Exp" "$DATE""
 
 y='\033[1;33m' #yellow
 g="\033[1;92m"
@@ -190,7 +178,7 @@ echo -e " ${y}        │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
 echo -e " ${y}        └───────────────────────────────┘$NC"
 echo -e "${y} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e " ${y}│  ${BIGreen}System OS         :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
-echo -e " ${y}│  ${BIGreen}Memory Usage      :  ${BIGreen}$uram MB/ $tram MB${NC}"
+echo -e " ${y}│  ${BIGreen}Ram Usage         :  ${BIGreen}$uram MB/ $tram MB${NC}"
 echo -e " ${y}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
 echo -e " ${y}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
 echo -e " ${y}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
@@ -198,20 +186,32 @@ echo -e " ${y}│  ${BIGreen}Domain            :  ${BIGreen}$(cat /etc/xray/doma
 echo -e " ${y}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
 echo -e " ${y}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e " ${y}└─────────────────────────────────────────────────────┘${NC}"
+DATE=$(date +'%d %B %Y')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "     │  Expiry In     : $(( (d1 - d2) / 86400 )) Days " | lolcat
+}
+mai="datediff "$Exp" "$DATE""
 echo -e "${y}        ┌─────────────────────────────────────┐" 
 echo -e "${y}        │  User          : $Name " 
-echo -e "${y}        |  Exp.sc        : $exp ( $certifacate ) Days"
+if [ $exp \< 1000 ];
+then
+echo -e "       $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
+else
+    datediff "$Exp" "$DATE"
+fi;
 echo -e "${y}        └─────────────────────────────────────┘"
-echo -e "     ${BIBlue} SSH : $ssh1 VMESS : $vma VLESS : $vla"
-echo -e "     ${BIBlue}     TROJAN : $trb   SHADOWSOCKS : $ssa"
-echo -e " ┌─────────────────────────────────────────────────────┐"
-echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
-echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
-echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
-echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
-echo -e " └─────────────────────────────────────────────────────┘"
-echo -e "                     Version : 1.4.0 ${NC}" | lolcat
+echo -e "           SSH : $ssh1 VMESS : $vma VLESS : $vla"
+echo -e "                TROJAN : $trb   SHADOWSOCKS : $ssa"
+echo -e " ${y}┌─────────────────────────────────────────────────────┐"
+echo -e "     ${BIGreen}1${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
+echo -e "     ${BIGreen}2${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
+echo -e "     ${BIGreen}3${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
+echo -e "     ${BIGreen}4${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
+echo -e "     ${BIGreen}5${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
+echo -e " ${y}└─────────────────────────────────────────────────────┘"
+echo -e "                   Version : 1.4.0 ${NC}" | lolcat
 echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
