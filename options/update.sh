@@ -39,7 +39,7 @@ Info1="$BIWhite($version)${Font_color_suffix}"
 Info2="$BIWhite(LATEST VERSION)${Font_color_suffix}"
 Error="Version $BIWhite[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /opt/.ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/newversion | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/newversion | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
 sts="${Info2}"
@@ -199,7 +199,7 @@ echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/version )
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/version )
 sleep 1
 clear
 echo -e ""
@@ -231,14 +231,12 @@ echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
+echo "Back to menu 5 detik" | lolcat
+sleep 5
 menu
 ;;
 x)
 clear
-echo -e ""
-read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
 esac
