@@ -178,7 +178,7 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ${z}           ┌───────────────────────────────┐$NC"
-echo -e " ${z}           │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
+echo -e " ${z}           │  ${NC}${g} .::.${NC} YogzTunneling ${g} .::. $NC"
 echo -e " ${z}           └───────────────────────────────┘$NC"
 echo -e "${z} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e " ${z}│$NC  $y System OS ${NC}        $Blue:$NC  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
@@ -206,8 +206,8 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "${z}        └─────────────────────────────────────┘"
-echo -e "               SSH :$NC$purple $ssh1$NC VMESS :$NC$purple $vma VLESS :$NC$purple $vla"
-echo -e "                    TROJAN :$NC$purple $trb SHDWSK :$NC$purple $ssa"
+echo -e "               ${z}SSH :${NC}${purple} $ssh1$NC ${z}VMESS :${NC}${purple} $vma ${NC}${z}VLESS :${NC}${purple} $vla${NC}"
+echo -e "                    ${z}TROJAN :${NC}${purple} $trb ${NC}${z}SHDWSK :${NC}${purple} $ssa${NC}"
 echo -e " ${z}┌─────────────────────────────────────────────────────┐"
 echo -e "    $r 1.$NC $purple MENU SSH$NC                $r 6.$NC $purple BACKUP/RESTORE$NC" 
 echo -e "    $r 2.$NC $purple MENU VMESS$NC              $r 7.$NC $purple SETTINGS$NC"    
