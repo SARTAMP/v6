@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#wget https://github.com/${GitUser}/
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
 BIGreen='\033[1;92m'      # Green
@@ -52,12 +52,19 @@ echo -e ""
 echo -e " ┌─────────────────────────────────────────────────┐" | lolcat
 echo -e " │                  MENU UPDATE                    │" | lolcat
 echo -e " └─────────────────────────────────────────────────┘" | lolcat
-echo -e "   - FIX SCRIPT BUG ALL" | lolcat
+echo -e "     VERSION NOW >> $Info1                   "
+echo -e "     STATUS UPDATE >> $sts                   "
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "    [1] UPDATE SCRIPT NOW${NC}"
+echo -e "       ${BIRed}WOULD YOU LIKE TO PROCEED ?${NC}"
+echo ""
+echo -e "    $BIWhite[              SELECT OPTION                 ]${NC}"
+echo -e ""
+echo -e "    [1] CHECK UPDATE NOW${NC}"
 echo -e "    [x] BACK TO MENU${NC}"
 echo -e ""
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
 echo -e ""
 read -p "      PLEASE CHOOSE 1 or x : " option2
 case $option2 in
@@ -66,36 +73,60 @@ version=$(cat /opt/.ver)
 new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/newversion | grep $version )
 if [ $version = $new_version ]; then
 clear
+echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                  UPDATE VERSION                 │" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "\e[1;31mUpdate Available Now..\e[m"
-echo -e ""
-sleep 0.5
+echo -e "\e[1;31mChecking New Version, Please Wait...!\e[m"
 clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                  UPDATE SCRIPT                    │" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
-sleep 0.5
+echo -e "\e[1;31mUpdate Not Available\e[m"
+echo ""
+clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[1;36mYou Have The Latest Version\e[m"
+echo -e "\e[1;31mThankyou.\e[0m"
 update
 fi
 clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                  UPDATE ALL PAKET               │" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[1;31mUpdate Available Now..\e[m"
+echo -e ""
+clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
+clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mGetting New Version Script..\e[0m"
-sleep 0.5
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
 wget -O run-update "https://raw.githubusercontent.com/${GitUser}/v6/main/options/update.sh"
 chmod +x run-update
+# RUN UPDATE
+echo ""
+clear
+echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "\e[0;32mNew Version Downloading Started!\e[0m"
-sleep 0.5
+echo -e "\e[0;32mPlease Wait...!\e[0m"
+clear
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 cd /usr/bin
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/SARTAMP/v6/main/add-ws.sh"
 wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/SARTAMP/v6/main/add-ssws.sh"
@@ -155,15 +186,52 @@ chmod +x /usr/bin/infoserv
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[0;32mDownloaded successfully!\e[0m"
+echo ""
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/version )
+sleep 1
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
+echo ""
+sleep 2
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[0;32mPatching... OK!\e[0m"
+sleep 1
+echo ""
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
+cd
+echo "$ver" > /opt/.ver
+rm -f update.sh
+clear
+echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo "Back to menu to 5 sec" | lolcat
-sleep 5
+echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
 x)
 clear
+echo -e ""
+read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
 esac
