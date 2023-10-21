@@ -186,40 +186,32 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ${y}        ┌───────────────────────────────┐$NC"
-echo -e " ${y}        │${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
+echo -e " ${y}        │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
 echo -e " ${y}        └───────────────────────────────┘$NC"
 echo -e "${y} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${y} │${NC}   ${g}User Core         :  ${BIGreen}Xray${NC}" 
-if [ "$cekup" = "day" ]; then
-echo -e " ${y}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes $uptimecek${NC}"
-else
-echo -e " ${y}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes ${NC}"
-fi
-echo -e " ${y}│  ${BIGreen}OS VPS            :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
+echo -e " ${y}│  ${BIGreen}System OS         :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
 echo -e " ${y}│  ${BIGreen}Memory Usage      :  ${BIGreen}$uram MB/ $tram MB${NC}"
 echo -e " ${y}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
-echo -e " ${y}│  ${BIGreen}Current Domain    :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
-echo -e " ${y}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
 echo -e " ${y}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
 echo -e " ${y}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
+echo -e " ${y}│  ${BIGreen}Domain            :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
+echo -e " ${y}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
 echo -e " ${y}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e " ${y}└─────────────────────────────────────────────────────┘${NC}"
-echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │    ${BIBlue} SSH       VMESS        VLESS       TROJAN"
-echo -e " │    ${BIBlue}  $ssh1          $vma            $vla            $trb"
-echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
+echo -e "${y}        ┌─────────────────────────────────────┐" 
+echo -e "${y}        │  User          : $Name " 
+echo -e "${y}        |  Exp.sc        : $exp ( $certifacate ) Days"
+echo -e "${y}        └─────────────────────────────────────┘"
+echo -e "     ${BIBlue} SSH : $ssh1 VMESS : $vma VLESS : $vla"
+echo -e "     ${BIBlue}     TROJAN : $trb   SHADOWSOCKS : $ssa"
+echo -e " ┌─────────────────────────────────────────────────────┐"
 echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
 echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
 echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
 echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
-echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-echo -e "        ┌─────────────────────────────────────┐" 
-echo -e "        │  User          : $Name " 
-echo -e "        |  Exp.sc        : $certifacate"
-echo -e "        └─────────────────────────────────────┘"
-echo -e "                       Version : 1.4.0 ${NC}" | lolcat
+echo -e " └─────────────────────────────────────────────────────┘"
+echo -e "                     Version : 1.4.0 ${NC}" | lolcat
 echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
