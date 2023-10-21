@@ -202,38 +202,33 @@ vmesslink6="vmess://$(echo $ama | base64 -w 0)"
 vmesslink7="vmess://$(echo $ami | base64 -w 0)"
 clear
 echo -e ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                    XRAY VMESS                   │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "Remarks       : ${user}"
-echo -e "Expired On    : $exp" 
-echo -e "Domain        : ${domain}" 
-echo -e "Port TLS      : 443" 
-echo -e "Port none TLS : 80" 
-echo -e "Port  GRPC    : 443" 
-echo -e "id            : ${uuid}" 
-echo -e "alterId       : 0" 
-echo -e "Security      : auto" 
-echo -e "Network       : ws" 
-echo -e "Path          : /vmess" 
-echo -e "Path          : /worryfree" 
-echo -e "Path          : http://bug/worryfree" 
-echo -e "Path          : /kuota-habis" 
-echo -e "ServiceName   : vmess-grpc" 
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Link TLS : "
-echo -e "${vmesslink1}" 
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Link none TLS : "
-echo -e "${vmesslink2}" 
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Link GRPC : "
-echo -e "${vmesslink5}"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
+echo -e "    <=  VMESS ACCOUNT =>"
+echo -e "══════════════════════════"
+echo -e "Remarks        : ${user}"
+echo -e "Domain         : ${domain}"
+echo -e "Port TLS       : 443"
+echo -e "Port none TLS  : 80"
+echo -e "Port gRPC      : 443"
+echo -e "id             : ${uuid}"
+echo -e "alterId        : 0"
+echo -e "Security       : auto"
+echo -e "Network        : ws"
+echo -e "Path           : /vmess"
+echo -e "Path           : /worryfree" 
+echo -e "Path           : http://bug/worryfree" 
+echo -e "Path           : /kuota-habis" 
+echo -e "ServiceName    : vmess-grpc"
+echo -e "══════════════════════════"
+echo -e "Link TLS       : ${vmesslink1}"
+echo -e "══════════════════════════"
+echo -e "Link none TLS  : ${vmesslink2}"
+echo -e "══════════════════════════"
+echo -e "Link gRPC      : ${vmesslink5}"
+echo -e "══════════════════════════"
+echo -e "Expired On     : $exp"
+echo -e "══════════════════════════"
 echo -e ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE               │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
@@ -314,9 +309,9 @@ vmesslink7="vmess://$(echo $ami | base64 -w 0)"
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                    XRAY VMESS                   │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "══════════════════════════"
+echo -e "    <=  VMESS ACCOUNT =>"
+echo -e "══════════════════════════"
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Port TLS       : 443"
@@ -331,19 +326,16 @@ echo -e "Path           : /worryfree"
 echo -e "Path           : http://bug/worryfree" 
 echo -e "Path           : /kuota-habis" 
 echo -e "ServiceName    : vmess-grpc"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
 echo -e "Link TLS       : ${vmesslink1}"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
 echo -e "Link none TLS  : ${vmesslink2}"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
 echo -e "Link gRPC      : ${vmesslink5}"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
 echo -e "Expired On     : $exp"
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "══════════════════════════"
 echo ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE               │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
@@ -442,9 +434,6 @@ echo -e "└──────────────────────�
     echo ""
     echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE               │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
   fi
@@ -489,9 +478,6 @@ echo -e "└──────────────────────�
     echo " Expired On  : $exp"
     echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               YSSHSTORE               │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
     read -n 1 -s -r -p "Press any key to back on menu"
     
     menu
@@ -499,18 +485,18 @@ echo -e "└──────────────────────�
 }
 
 clear
+echo -e "\e[32m════════════════════════════════════════" | lolcat
+echo -e "             ═══[ VMESS ]═══"
+echo -e "\e[32m════════════════════════════════════════" | lolcat
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                    VMESS MENU                   │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} CREATE ACCOUNT  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} CREATE TRIAL   ${NC}  "
-echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} DELETE ACCOUNT  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} RENEW ACCOUNT  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} CEK USER LOGIN   ${NC}  "
-echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} CEK DETAIL ACCOUNT  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}0${BICyan}]${BIGreen} BACK TO MENU${NC}"
-echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT   ${NC}  "
+echo -e "${BICyan}[${BIGreen}1${BICyan}]${BIGreen} Create Vmess Account  ${NC}   "
+echo -e "${BICyan}[${BIGreen}2${BICyan}]${BIGreen} Trial Vmess   ${NC}  "
+echo -e "${BICyan}[${BIGreen}3${BICyan}]${BIGreen} Delete Account Vmess  ${NC}   "
+echo -e "${BICyan}[${BIGreen}4${BICyan}]${BIGreen} Renew Account Vmess  ${NC}   "
+echo -e "${BICyan}[${BIGreen}5${BICyan}]${BIGreen} Check User Login Vmess   ${NC}  "
+echo -e "${BICyan}[${BIGreen}6${BICyan}]${BIGreen} Detail Akun Vmess  ${NC}   "
+echo -e "${BICyan}[${BIGreen}0${BICyan}]${BIGreen} BACK TO MENU${NC}"
+echo -e "${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT   ${NC}  "
 echo -e "└──────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -p " Select menu : " opt
