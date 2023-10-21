@@ -101,7 +101,7 @@ portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | a
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
-echo -e " CREATE SSH ACCOUNT"
+echo -e "   ADD SSH ACCOUNT"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 read -p "Username       : " Login
 read -p "Password       : " Pass
@@ -120,9 +120,9 @@ clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-echo -e "◇━━━━━━━━━━━━━━━━━◇"
-echo -e " SSH ACCOUNT"
-echo -e "◇━━━━━━━━━━━━━━━━━◇"
+echo -e "══════════════════════════"
+echo -e "    <=  SSH ACCOUNT =>"
+echo -e "══════════════════════════"
 echo -e "Username     : $Login"
 echo -e "Password     : $Pass"    
 echo -e "CITY         : $(cat /root/.mycity)"
@@ -142,15 +142,11 @@ echo -e "SSL/TLS      : 443, 777"
 echo -e "OVPN TCP     : http://$domain:89/tcp.ovpn"
 echo -e "OVPN UDP     : http://$domain:89/udp.ovpn"
 echo -e "BadVpn       : 7300"      
-echo -e "◇━━━━━━━━━━━━━━━━━◇"
-echo -e "Payload WS"
-echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "◇━━━━━━━━━━━━━━━━━◇"
-echo -e "Payload WSS"
-echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "◇━━━━━━━━━━━━━━━━━◇"          
-echo -e " Expired => $exp"
-echo -e "◇━━━━━━━━━━━━━━━━━◇"
+echo -e "══════════════════════════"
+echo -e "Payload Ws   => GET / HTTP/1.1[crlf]Host: $(cat /etc/xray/domain)[crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "══════════════════════════"          
+echo -e "    Expired => $exp"
+echo -e "══════════════════════════"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
