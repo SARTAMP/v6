@@ -192,10 +192,10 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │${GB}                  AUTOSCRIPT YSSHstore             │${NC}"
+echo -e " │${GB}                  AUTOSCRIPT MULTIPORT             │${NC}"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Multiport XRAY${NC}" 
+echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Xray${NC}" 
 if [ "$cekup" = "day" ]; then
 echo -e " ${BICyan}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes $uptimecek${NC}"
 else
@@ -212,7 +212,7 @@ echo -e " ${BICyan}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 d
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e " │    ${BIBlue} SSH       VMESS        VLESS       TROJAN"
-echo -e " │    ${BIBlue}  $ssh1          $vma            $vla           $trb"
+echo -e " │    ${BIBlue}  $ssh1          $vma            $vla            $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
 echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             │"
@@ -240,7 +240,7 @@ else
 fi;
 echo -e "        └─────────────────────────────────────┘" | lolcat
 echo -e "      ${w}             Version : 1.4.0 ${NC}"
-echo -e "                 ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
+echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
