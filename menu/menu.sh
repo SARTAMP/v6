@@ -190,7 +190,7 @@ DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "       │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
+    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "${y}        ┌─────────────────────────────────────┐" 
@@ -202,8 +202,8 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "${y}        └─────────────────────────────────────┘"
-echo -e "           SSH : $ssh1 VMESS : $vma VLESS : $vla"
-echo -e "                TROJAN : $trb   SHADOWSOCKS : $ssa"
+echo -e "               SSH : $ssh1 VMESS : $vma VLESS : $vla"
+echo -e "                     TROJAN : $trb   SHADOWSOCKS : $ssa"
 echo -e " ${y}┌─────────────────────────────────────────────────────┐"
 echo -e "     ${BIGreen}1.${BIGreen} MENU SSH${NC}                  ${BIGreen}6.${BIGreen} BACKUP/RESTORE${NC}" 
 echo -e "     ${BIGreen}2.${BIGreen} MENU VMESS${NC}                ${BIGreen}7.${BIGreen} SETTINGS${NC}"    
