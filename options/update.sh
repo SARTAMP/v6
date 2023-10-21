@@ -78,6 +78,8 @@ echo -e "│                  UPDATE SCRIPT                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
 sleep 0.5
+update
+fi
 clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                  UPDATE ALL PAKET               │" | lolcat
@@ -163,5 +165,5 @@ menu
 x)
 clear
 menu
-
+;;
 esac
