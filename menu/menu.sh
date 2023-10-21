@@ -192,10 +192,10 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │                  AUTOSCRIPT PREMIUM                │" | lolcat
+echo -e " │$GB                  AUTOSCRIPT YSSHstore                {$NC}│" | lolcat
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │  ${BIGreen}Premium Version   :  ${BIGreen}Multiport XRAY${NC}" 
+echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Multiport XRAY${NC}" 
 if [ "$cekup" = "day" ]; then
 echo -e " ${BICyan}│  ${BIGreen}System Uptime     :  ${BIGreen}$uphours $upminutes $uptimecek${NC}"
 else
@@ -205,13 +205,13 @@ echo -e " ${BICyan}│  ${BIGreen}OS VPS            :  "${BIGreen}`hostnamectl |
 echo -e " ${BICyan}│  ${BIGreen}Memory Usage      :  ${BIGreen}$uram MB/ $tram MB${NC}"
 echo -e " ${BICyan}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
 echo -e " ${BICyan}│  ${BIGreen}Current Domain    :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
-echo -e " ${BICyan}│  ${BIGreen}IP VPS            :  ${BIGreen}$IPVPS${NC}"
-echo -e " ${BICyan}│  ${BIGreen}ISP VPS           :  ${BIGreen}$ISPVPS${NC}"
-echo -e " ${BICyan}│  ${BIGreen}REGION            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
-echo -e " ${BICyan}│  ${BIGreen}DATE&TIME         :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
+echo -e " ${BICyan}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
+echo -e " ${BICyan}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
+echo -e " ${BICyan}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
+echo -e " ${BICyan}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │    ${BIBlue} SSH           VMESS          VLESS       TROJAN"
+echo -e " │    ${BIBlue} SSH        VMESS        VLESS       TROJAN"
 echo -e " │    ${BIBlue}  $ssh1          $vma            $vla          $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
@@ -239,8 +239,8 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "     └─────────────────────────────────────┘" | lolcat
-echo -e "    ${w}             Version : 4.0.9 ${NC}"
-echo -e "               ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
+echo -e "      ${w}             Version : 4.0.9 ${NC}"
+echo -e "                 ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
