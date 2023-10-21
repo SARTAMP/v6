@@ -19,6 +19,7 @@ IBlue='\033[0;94m'        # Blue
 IPurple='\033[0;95m'      # Purple
 ICyan='\033[0;96m'        # Cyan
 IWhite='\033[0;97m'       # White
+z="\033[96m"
 NC='\e[0m'
 
 # // Export Color & Information
@@ -157,6 +158,9 @@ else
 resv2r="${red}OFF${NC}"
 fi
 
+purple="\033[1;95m"
+r="\033[1;31m"  #REDTERANG
+Blue="\033[0;34m"
 y='\033[1;33m' #yellow
 g="\033[1;92m"
 IPVPS=$(curl -s ipinfo.io/ip )
@@ -173,46 +177,46 @@ ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
 let ssa=$ssx/2
 ########################
 clear
-echo -e " ${y}           ┌───────────────────────────────┐$NC"
-echo -e " ${y}           │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
-echo -e " ${y}           └───────────────────────────────┘$NC"
-echo -e "${y} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e " ${y}│  ${BIGreen}System OS         :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
-echo -e " ${y}│  ${BIGreen}Ram Usage         :  ${BIGreen}$uram MB/ $tram MB${NC}"
-echo -e " ${y}│  ${BIGreen}CPU Usage         :  ${BIGreen}$cpu_usage ${NC}"
-echo -e " ${y}│  ${BIGreen}ISP               :  ${BIGreen}$ISPVPS${NC}"
-echo -e " ${y}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinfo.io/timezone )${NC}"
-echo -e " ${y}│  ${BIGreen}Domain            :  ${BIGreen}$(cat /etc/xray/domain)${NC}"
-echo -e " ${y}│  ${BIGreen}IP-VPS            :  ${BIGreen}$IPVPS${NC}"
-echo -e " ${y}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
-echo -e " ${y}└─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${z}           ┌───────────────────────────────┐$NC"
+echo -e " ${z}           │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
+echo -e " ${z}           └───────────────────────────────┘$NC"
+echo -e "${z} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e " ${z}│$NC  $y System OS ${NC}        $Blue:$NC  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
+echo -e " ${z}│$NC  $y Ram Usage ${NC}        $Blue:$NC  $uram MB/ $tram MB${NC}"
+echo -e " ${z}│$NC  $y CPU Usage ${NC}        $Blue:$NC  $cpu_usage ${NC}"
+echo -e " ${z}│$NC  $y ISP ${NC}              $Blue:$NC  $ISPVPS${NC}"
+echo -e " ${z}│$NC  $y CITY ${NC}             $Blue:$NC  $(curl -s ipinfo.io/timezone )${NC}"
+echo -e " ${z}│$NC  $y Domain ${NC}            $Blue:$NC  $(cat /etc/xray/domain)${NC}"
+echo -e " ${z}│$NC  $y IP-VPS ${NC}            $Blue:$NC  $IPVPS${NC}"
+echo -e " ${z}│$NC  $y Date & Time ${NC}       $Blue:$NC  $( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
+echo -e " ${z}└─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
+    echo -e "${z}        │$NC$y  Expiry In     : $r $(( (d1 - d2) / 86400 ))$NC Days "
 }
 mai="datediff "$Exp" "$DATE""
-echo -e "${y}        ┌─────────────────────────────────────┐" 
-echo -e "${y}        │  User          : $Name " 
+echo -e "${z}        ┌─────────────────────────────────────┐" 
+echo -e "${z}        │$NC$y  User          : $Name " 
 if [ $exp \< 1000 ];
 then
-echo -e "       $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
+echo -e "       $z│$NC$y License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
 fi;
-echo -e "${y}        └─────────────────────────────────────┘"
+echo -e "${z}        └─────────────────────────────────────┘"
 echo -e "               SSH : $ssh1 VMESS : $vma VLESS : $vla"
-echo -e "                     TROJAN : $trb   SHADOWSOCKS : $ssa"
-echo -e " ${y}┌─────────────────────────────────────────────────────┐"
-echo -e "     ${BIGreen}1.${BIGreen} MENU SSH${NC}                  ${BIGreen}6.${BIGreen} BACKUP/RESTORE${NC}" 
-echo -e "     ${BIGreen}2.${BIGreen} MENU VMESS${NC}                ${BIGreen}7.${BIGreen} SETTINGS${NC}"    
-echo -e "     ${BIGreen}3.${BIGreen} MENU VLESS${NC}                ${BIGreen}8.${BIGreen} INFO-SCRIPT${NC}"    
-echo -e "     ${BIGreen}4.${BIGreen} MENU TROJAN${NC}               ${BIGreen}9.${BIGreen} INFO-SERVER${NC}" 
-echo -e "     ${BIGreen}5.${BIGreen} SHADOWSOCKS${NC}               ${BIGreen}x.${BIGreen} EXIT SCRIPT${NC}"     
-echo -e " ${y}└─────────────────────────────────────────────────────┘"
-echo -e "                   Version : 1.4.0 ${NC}"
-echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
+echo -e "                  TROJAN : $trb   SHADOWSOCKS : $ssa"
+echo -e " ${z}┌─────────────────────────────────────────────────────┐"
+echo -e "     $r 1.$NC $purple MENU SSH$NC                  r6.$NC $purple BACKUP/RESTORE$NC" 
+echo -e "     $r 2.$NC $purple MENU VMESS$NC                r7.$NC $purple SETTINGS$NC"    
+echo -e "     $r 3.$NC $purple MENU VLESS$NC                r8.$NC $purple INFO-SCRIPT$NC"    
+echo -e "     $r 4.$NC $purple MENU TROJAN$NC               r9.$NC $purple INFO-SERVER$NC" 
+echo -e "     $r 5.$NC $purple SHADOWSOCKS$NC               rx.$NC $purple EXIT SCRIPT$NC"     
+echo -e " ${z}└─────────────────────────────────────────────────────┘"
+echo -e "                   Version : 1.4.0 ${NC}" | lolcat
+echo -e "                   _______________${NC}" | lolcat
 echo
 read -p " Select menu : " opt
 echo -e ""
