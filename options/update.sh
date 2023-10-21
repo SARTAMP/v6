@@ -89,12 +89,6 @@ echo ""
 cd /usr/bin
 wget -O run-update "https://raw.githubusercontent.com/${GitUser}/v6/main/options/update.sh"
 chmod +x run-update
-# RUN UPDATE
-echo ""
-clear
-echo ""
-clear
-echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
@@ -168,9 +162,3 @@ echo -e "└──────────────────────�
 echo "                 Back to menu to 5 sec" | lolcat
 sleep 5
 menu
-;;
-x)
-clear
-menu
-;;
-esac
