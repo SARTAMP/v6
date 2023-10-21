@@ -1,5 +1,4 @@
 #!/bin/bash
-#CRSe7en2nd
 
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
@@ -101,27 +100,15 @@ fi
 portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               CREATE SSH ACCOUNT                │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
+echo -e " CREATE SSH ACCOUNT"
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
 read -p "Username       : " Login
 read -p "Password       : " Pass
 read -p "Max IP         : " iplimit
 read -p "Expired (Days) : " masaaktif
 
 IP=$(curl -sS ifconfig.me);
-#ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
-#opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
-#db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
-#ssl="$(cat /root/log-install.txt | grep -w "Stunnel5" | cut -d: -f2)"
-#sqd="$(cat /root/log-install.txt | grep -w "Squid" | cut -d: -f2)"
-#ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-#ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-
-#OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
-#OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
-#OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
-
 sleep 1
 #limitip
 if [[ $iplimit -gt 0 ]]; then
@@ -133,14 +120,14 @@ clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
-echo -e " SSH ACCOUNT   " | lolcat
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat                
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
+echo -e " SSH ACCOUNT"
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Username     : $Login"
 echo -e "Password     : $Pass"    
 echo -e "CITY         : $(cat /root/.mycity)"
 echo -e "ISP          : $(cat /root/.myisp)"
-echo -e "Host/IP      : $(cat /etc/xray/domain)"
+echo -e "Host         : $(cat /etc/xray/domain)"
 #echo -e "NSDOMAIN     : $(cat /etc/xray/dns)"
 #echo -e "PUBKEY       : $(cat /etc/slowdns/server.pub)"
 #echo -e "Slowdns      : 53, 5300"
@@ -155,17 +142,15 @@ echo -e "SSL/TLS      : 443, 777"
 echo -e "OVPN TCP     : http://$domain:89/tcp.ovpn"
 echo -e "OVPN UDP     : http://$domain:89/udp.ovpn"
 echo -e "BadVpn       : 7300"      
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Payload WS"
 echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Payload WSS"
 echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
-echo -e ""  
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat              
-echo -e "      Expired => $exp"
-echo -e "◇━━━━━━━━━━━━━━━━━◇" | lolcat
+echo -e "◇━━━━━━━━━━━━━━━━━◇"          
+echo -e " Expired => $exp"
+echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
