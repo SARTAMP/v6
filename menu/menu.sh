@@ -173,9 +173,9 @@ ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
 let ssa=$ssx/2
 ########################
 clear
-echo -e " ${y}        ┌───────────────────────────────┐$NC"
-echo -e " ${y}        │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
-echo -e " ${y}        └───────────────────────────────┘$NC"
+echo -e " ${y}           ┌───────────────────────────────┐$NC"
+echo -e " ${y}           │    ${NC}${g} .::.${NC} YogzTunnel ${g} .::. $NC"
+echo -e " ${y}           └───────────────────────────────┘$NC"
 echo -e "${y} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e " ${y}│  ${BIGreen}System OS         :  "${BIGreen}`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
 echo -e " ${y}│  ${BIGreen}Ram Usage         :  ${BIGreen}$uram MB/ $tram MB${NC}"
@@ -190,7 +190,7 @@ DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "     │  Expiry In     : $(( (d1 - d2) / 86400 )) Days " | lolcat
+    echo -e "       │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "${y}        ┌─────────────────────────────────────┐" 
@@ -205,13 +205,13 @@ echo -e "${y}        └──────────────────�
 echo -e "           SSH : $ssh1 VMESS : $vma VLESS : $vla"
 echo -e "                TROJAN : $trb   SHADOWSOCKS : $ssa"
 echo -e " ${y}┌─────────────────────────────────────────────────────┐"
-echo -e "     ${BIGreen}1${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
-echo -e "     ${BIGreen}2${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
-echo -e "     ${BIGreen}3${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
-echo -e "     ${BIGreen}4${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
-echo -e "     ${BIGreen}5${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
+echo -e "     ${BIGreen}1.${BIGreen} MENU SSH${NC}                  ${BIGreen}6.${BIGreen} BACKUP/RESTORE${NC}" 
+echo -e "     ${BIGreen}2.${BIGreen} MENU VMESS${NC}                ${BIGreen}7.${BIGreen} SETTINGS${NC}"    
+echo -e "     ${BIGreen}3.${BIGreen} MENU VLESS${NC}                ${BIGreen}8.${BIGreen} INFO-SCRIPT${NC}"    
+echo -e "     ${BIGreen}4.${BIGreen} MENU TROJAN${NC}               ${BIGreen}9.${BIGreen} INFO-SERVER${NC}" 
+echo -e "     ${BIGreen}5.${BIGreen} SHADOWSOCKS${NC}               ${BIGreen}x.${BIGreen} EXIT SCRIPT${NC}"     
 echo -e " ${y}└─────────────────────────────────────────────────────┘"
-echo -e "                   Version : 1.4.0 ${NC}" | lolcat
+echo -e "                   Version : 1.4.0 ${NC}"
 echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
