@@ -194,11 +194,11 @@ DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "${z}        │$NC$y  Expiry In     :$r $(( (d1 - d2) / 86400 ))$NC Days "
+    echo -e "${z}        │$NC$y  Expiry In$NC     $Blue:$NC$r $(( (d1 - d2) / 86400 ))$NC Days "
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "${z}        ┌─────────────────────────────────────┐" 
-echo -e "${z}        │$NC$y  User          : $Name " 
+echo -e "${z}        │$NC$y  User$NC          $Blue:$NC $Name " 
 if [ $exp \< 1000 ];
 then
 echo -e "       $z│$NC$y License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
@@ -206,14 +206,14 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "${z}        └─────────────────────────────────────┘"
-echo -e "               SSH : $ssh1 VMESS : $vma VLESS : $vla"
-echo -e "               TROJAN : $trb   SHADOWSOCKS : $ssa"
+echo -e "               SSH :$NC$purple $ssh1$NC VMESS :$NC$purple $vma VLESS :$NC$purple $vla"
+echo -e "                    TROJAN :$NC$purple $trb SHDWSK :$NC$purple $ssa"
 echo -e " ${z}┌─────────────────────────────────────────────────────┐"
-echo -e "  $r 1.$NC $purple MENU SSH$NC                  $r 6.$NC $purple BACKUP/RESTORE$NC" 
-echo -e "  $r 2.$NC $purple MENU VMESS$NC                $r 7.$NC $purple SETTINGS$NC"    
-echo -e "  $r 3.$NC $purple MENU VLESS$NC                $r 8.$NC $purple INFO PORT$NC"    
-echo -e "  $r 4.$NC $purple MENU TROJAN$NC               $r 9.$NC $purple INFO SERVER$NC" 
-echo -e "  $r 5.$NC $purple SHADOWSOCKS$NC               $r x.$NC $purple EXIT SCRIPT$NC"     
+echo -e "    $r 1.$NC $purple MENU SSH$NC                $r 6.$NC $purple BACKUP/RESTORE$NC" 
+echo -e "    $r 2.$NC $purple MENU VMESS$NC              $r 7.$NC $purple SETTINGS$NC"    
+echo -e "    $r 3.$NC $purple MENU VLESS$NC              $r 8.$NC $purple INFO PORT$NC"    
+echo -e "    $r 4.$NC $purple MENU TROJAN$NC             $r 9.$NC $purple INFO SERVER$NC" 
+echo -e "    $r 5.$NC $purple SHADOWSOCKS$NC             $r x.$NC $purple EXIT SCRIPT$NC"     
 echo -e " ${z}└─────────────────────────────────────────────────────┘"
 echo -e "                   Version : 1.4.0 ${NC}" | lolcat
 echo -e "                   _______________${NC}" | lolcat
