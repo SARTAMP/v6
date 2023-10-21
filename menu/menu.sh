@@ -192,7 +192,7 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │${GB}                  AUTOSCRIPT MULTIPORT             │${NC}"
+echo -e " │${RB}                  AUTOSCRIPT MULTIPORT             │${NC}"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Xray${NC}" 
@@ -214,31 +214,31 @@ echo -e " ┌──────────────────────�
 echo -e " │    ${BIBlue} SSH       VMESS        VLESS       TROJAN"
 echo -e " │    ${BIBlue}  $ssh1          $vma            $vla            $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
-echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
-echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             │"
+echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   "
+echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             "
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
 echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
 echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
 echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}"     
+echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT SCRIPT${NC}"     
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days " | lolcat
+    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days "
 }
 mai="datediff "$Exp" "$DATE""
-echo -e "        ┌─────────────────────────────────────┐" | lolcat
-echo -e "        │  User          : $Name " | lolcat
+echo -e "        ┌─────────────────────────────────────┐" 
+echo -e "        │  User          : $Name " 
 if [ $exp \< 1000 ];
 then
 echo -e "       $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
 fi;
-echo -e "        └─────────────────────────────────────┘" | lolcat
+echo -e "        └─────────────────────────────────────┘"
 echo -e "      ${w}             Version : 1.4.0 ${NC}"
 echo -e "                   ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
