@@ -31,7 +31,7 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 fi
 echo ""
 version=$(cat /opt/.ver)
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/version )
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/version )
 clear
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -69,7 +69,7 @@ read -p "      PLEASE CHOOSE 1 or x : " option2
 case $option2 in
 1)
 version=$(cat /opt/.ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/newversion | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/newversion | grep $version )
 if [ $version = $new_version ]; then
 clear
 echo ""
@@ -116,7 +116,7 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/kucing/main/options/update.sh"
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/sartamp/main/options/update.sh"
 chmod +x run-update
 # RUN UPDATE
 echo ""
