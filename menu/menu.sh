@@ -157,6 +157,26 @@ else
 resv2r="${red}OFF${NC}"
 fi
 
+#Warna Teks underline
+ug="\033[4;32m" # HIJAU
+ur="\033[4;31m" # MERAH
+uy="\033[4;33m" # KUNING
+uw="\033[4;37m" # PUTIH
+uu="\033[4;35m" # UNGU
+uc="\033[4;36m" # CYANN
+ub="\033[4;30m" # BLACK
+#Warna Text 
+c="\e[1;36m" # CYANN
+y="\e[1;33m" # KUNING
+g="\e[1;32m" # HIJAU
+w="\e[1;37m" # PUTIH
+u="\e[1;35m" # UNGU
+r="\e[1;31m" # MERAH
+NC="\e[0m"
+# background
+GB="\033[42;37m" # HIJAU BACKGROUND
+RB="\033[41;37m" # MERAH BACKGROUND
+
 IPVPS=$(curl -s ipinfo.io/ip )
 ISPVPS=$( curl -s ipinfo.io/org )
 
