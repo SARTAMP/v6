@@ -192,7 +192,7 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │$GB                  AUTOSCRIPT YSSHstore                {$NC}│" | lolcat
+echo -e " │$GB                  AUTOSCRIPT YSSHstore             ${$NC}│"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Multiport XRAY${NC}" 
@@ -211,8 +211,8 @@ echo -e " ${BICyan}│  ${BIGreen}Region            :  ${BIGreen}$(curl -s ipinf
 echo -e " ${BICyan}│  ${BIGreen}Date & Time       :  ${BIGreen}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │    ${BIBlue} SSH        VMESS        VLESS       TROJAN"
-echo -e " │    ${BIBlue}  $ssh1          $vma            $vla          $trb"
+echo -e " │    ${BIBlue} SSH       VMESS        VLESS       TROJAN"
+echo -e " │    ${BIBlue}  $ssh1          $vma            $vla           $trb"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "      ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r   │"
 echo -e "      ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws             │"
@@ -227,19 +227,19 @@ DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "     │  Expiry In     : $(( (d1 - d2) / 86400 )) Days " | lolcat
+    echo -e "        │  Expiry In     : $(( (d1 - d2) / 86400 )) Days " | lolcat
 }
 mai="datediff "$Exp" "$DATE""
-echo -e "     ┌─────────────────────────────────────┐" | lolcat
-echo -e "     │  User          : $Name " | lolcat
+echo -e "        ┌─────────────────────────────────────┐" | lolcat
+echo -e "        │  User          : $Name " | lolcat
 if [ $exp \< 1000 ];
 then
 echo -e "       $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
 fi;
-echo -e "     └─────────────────────────────────────┘" | lolcat
-echo -e "      ${w}             Version : 4.0.9 ${NC}"
+echo -e "        └─────────────────────────────────────┘" | lolcat
+echo -e "      ${w}             Version : $(cat /opt/ver) ${NC}"
 echo -e "                 ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
