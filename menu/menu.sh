@@ -219,7 +219,6 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "     ┌─────────────────────────────────────┐" | lolcat
-echo -e "     │  Version       : $(cat /opt/.ver) Last Version " | lolcat
 echo -e "     │  User          : $Name " | lolcat
 if [ $exp \< 1000 ];
 then
@@ -228,6 +227,8 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "     └─────────────────────────────────────┘" | lolcat
+echo -e "          ${w}             Version : 4.0.9 ${NC}"
+echo -e "                       ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
