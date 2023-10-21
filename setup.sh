@@ -316,7 +316,7 @@ echo ""
 
 # // Reading Your Input
 read -p "Input Your Domain : " domain
-read -p "Input Your NSdomain  : " nsdomain
+#read -p "Input Your NSdomain  : " nsdomain
 if [[ $domain == "" ]]; then
     clear
     echo -e "${EROR} No Input Detected !"
@@ -420,28 +420,22 @@ fi
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m           >>> Install Source <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
-sleep 1 
 wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/tools/arzsource.sh && chmod +x arzsource.sh && ./arzsource.sh
 #install ssh-vpn
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m          >>> Install SSH WS <<<        \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
-sleep 1
 wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/tools/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
-
-
 #install ins-xray
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m            >>> Install Xray <<<         \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
-sleep 1 
 wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/tools/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 
 #install ins-xray
 echo -e "┌─────────────────────────────────────────┐"
 echo -e " \E[41;1;39m            >>> Install BR <<<           \E[0m$NC"
 echo -e "└─────────────────────────────────────────┘"
-sleep 1 
 wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 # // Download Data
@@ -698,11 +692,6 @@ Client Name   : $Name
 
 "
 history -c
-
-echo -ne "[ ${yell}WARNING${NC} ] Apakah Anda Ingin Reboot Sekarang ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
+echo -e "Instal sukses proses reboot selama 5 detik !!"
+sleep 5
 reboot
-fi
