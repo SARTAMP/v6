@@ -1,5 +1,5 @@
 #!/bin/bash
-#wget https://github.com/${GitUser}/
+
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
 BIGreen='\033[1;92m'      # Green
@@ -31,7 +31,7 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 fi
 echo ""
 version=$(cat /opt/.ver)
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/version )
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/version )
 clear
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -39,7 +39,7 @@ Info1="$BIWhite($version)${Font_color_suffix}"
 Info2="$BIWhite(LATEST VERSION)${Font_color_suffix}"
 Error="Version $BIWhite[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /opt/.ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/newversion | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/newversion | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
 sts="${Info2}"
@@ -69,7 +69,7 @@ read -p "      PLEASE CHOOSE 1 or x : " option2
 case $option2 in
 1)
 version=$(cat /opt/.ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/newversion | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/newversion | grep $version )
 if [ $version = $new_version ]; then
 clear
 echo ""
@@ -77,7 +77,7 @@ echo -e "┌──────────────────────�
 echo -e "│                  MENU UPDATE                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;31mChecking New Version, Please Wait...!\e[m"
-sleep 3
+sleep 2.5
 clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                  MENU UPDATE                    │" | lolcat
@@ -116,7 +116,7 @@ sleep 1
 echo ""
 # UPDATE RUN-UPDATE
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/sartamp/main/options/update.sh"
+wget -O run-update "https://raw.githubusercontent.com/${GitUser}/v6/main/options/update.sh"
 chmod +x run-update
 # RUN UPDATE
 echo ""
@@ -126,14 +126,14 @@ echo -e "┌──────────────────────�
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPlease Wait...!\e[0m"
-sleep 6
+sleep 1
 clear
 echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
-sleep 3
+sleep 0.5
 cd /usr/bin
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/SARTAMP/v6/main/add-ws.sh"
 wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/SARTAMP/v6/main/add-ssws.sh"
@@ -199,24 +199,19 @@ echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/sartamp/main/version )
-sleep 1
+ver=$( curl https://raw.githubusercontent.com/${GitUser}/v6/main/version )
 clear
 echo -e ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
-echo ""
-sleep 2
 clear
 echo -e ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 PROSES UPDATE                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPatching... OK!\e[0m"
-sleep 1
-echo ""
 clear
 echo -e ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
