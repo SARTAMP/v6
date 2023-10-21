@@ -2,7 +2,7 @@
 <pre><code>apt update && apt upgrade -y && update-grub && sleep 2 && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt upgrade && apt install -y bzip2 gzip coreutils screen curl unzip && wget -q https://raw.githubusercontent.com/SARTAMP/v6/main/setup.sh && chmod +x setup.sh && ./setup.sh</code></pre>
 
 ### UPDATE
-<pre><code>https://raw.githubusercontent.com/SARTAMP/v6/main/setup.sh&& chmod +x setup.sh && ./setup.sh</code></pre>
+<pre><code>https://raw.githubusercontent.com/SARTAMP/v6/main/options/update.sh && chmod +x update.sh && ./update.sh</code></pre>
 
 ## ⏩ AUTOSCRIPT WEBSOCKET MULTIPORT 443 DETAILS ⏪
 ### Support Vmess Multipath <br> 
