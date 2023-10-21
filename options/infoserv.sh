@@ -1,5 +1,4 @@
 #!/bin/bash
-#Script By CRSe7en2nd
 
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
@@ -261,8 +260,5 @@ echo -e " Websocket TLS           :$swstls"
 echo -e " Websocket None TLS      :$swstls"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
-echo -e " ILHAM STORE " | lolcat
-echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
-
 menu
