@@ -192,7 +192,7 @@ let ssa=$ssx/2
 ########################
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │$GB                  AUTOSCRIPT YSSHstore             ${$NC}│"
+echo -e " │${GB}                  AUTOSCRIPT YSSHstore             │${NC}"
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │  ${BIGreen}User Core         :  ${BIGreen}Multiport XRAY${NC}" 
@@ -239,7 +239,7 @@ else
     datediff "$Exp" "$DATE"
 fi;
 echo -e "        └─────────────────────────────────────┘" | lolcat
-echo -e "      ${w}             Version : $(cat /opt/ver) ${NC}"
+echo -e "      ${w}             Version : 1.4.0 ${NC}"
 echo -e "                 ${y}___${r}___${u}___${w}___${c}___${g}${NC}"
 echo
 read -p " Select menu : " opt
