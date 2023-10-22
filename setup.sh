@@ -316,7 +316,7 @@ echo ""
 
 # // Reading Your Input
 read -p "Input Your Domain : " domain
-#read -p "Input Your NSdomain  : " nsdomain
+read -p "Input Your NSdomain  : " nsdomain
 if [[ $domain == "" ]]; then
     clear
     echo -e "${EROR} No Input Detected !"
