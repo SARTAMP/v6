@@ -8,7 +8,7 @@ clear
 # Valid Script
 VALIDITY () {
     today=`date -d "0 days" +"%Y-%m-%d"`
-    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/taikucing/main/mek | grep $MYIP | awk '{print $4}')
+    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/izin/main/ip | grep $MYIP | awk '{print $4}')
     if [[ $today < $Exp1 ]]; then
     echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
     else
